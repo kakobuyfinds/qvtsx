@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <title>FSBuy spreadsheet | Guida italiana a categorie, taglie e QC</title>
+  <meta name="description" content="Scopri come usare un FSBuy spreadsheet: esplora dieci categorie, confronta taglie e foto QC e stima il costo totale di una spedizione in Italia.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="FSBuy spreadsheet | Guida italiana a categorie, taglie e QC">
+  <meta property="og:description" content="Dieci categorie da esplorare e controlli pratici su misure, foto QC e spedizione in Italia.">
+  <!--
+  Ricerca editoriale, novembre 2026. La prima pagina di Google Italia non è stata
+  verificabile direttamente. I primi dieci risultati del motore di ricerca disponibile
+  sono elencati qui in ordine di restituzione, senza attribuire posizioni Google.
+  1. maisonlooks.com/en/spreadsheet/fsbuy: catalogo, piattaforme e commissioni.
+  2. qcradar.com/fsbuy-spreadsheet?brand=corteiz: filtri, link e foto QC.
+  3. fsbuy.net/faq.html: ricerca per categoria e controlli prima dell'ordine.
+  4. maisonlooks.com/en/spreadsheet/fansbuy: catalogo di un altro agente.
+  5. fsbuy.org/faq.html: confronto tra schede, categorie e controllo qualità.
+  6. fansbuysheets.net: catalogo di un altro agente, con ricerca e QC.
+  7. w2cspreadsheet.com/agents/fsbuy: procedura d'acquisto, costi e magazzino.
+  8. telegroups.org/channels/%40Universalfind: raccolta di link per vari agenti.
+  9. fansbuy.net/spreadsheet: link e categorie di un altro agente.
+  10. fansbuy.net: ricerca per modello e navigazione per categoria di un altro agente.
+  Temi secondari: catalogo FSBuy, guida FSBuy in italiano, foto QC FSBuy,
+  taglie FSBuy, spedizione FSBuy in Italia.
+  Ricerche specifiche: come usare un FSBuy spreadsheet; come cercare sneakers per
+  modello; come confrontare taglie EU e lunghezza del piede; dove trovare la misura
+  della soletta; come leggere una tabella taglie in centimetri; come misurare una
+  felpa da stesa; come scegliere la taglia di una giacca; come misurare il girovita
+  dei pantaloni; come verificare la circonferenza di un cappellino; come misurare la
+  lunghezza di una collana; come leggere le foto QC delle sneakers; quali foto QC
+  chiedere per una giacca; come verificare le cuciture in foto; come controllare la
+  variante colore; come distinguere foto del venditore e foto QC; come controllare
+  un link prodotto prima dell'ordine; come confrontare link Weidian e Taobao;
+  come cercare un articolo su 1688; come stimare la spedizione verso l'Italia;
+  come distinguere peso reale e volumetrico; come confrontare due preventivi di
+  spedizione; come calcolare il costo totale in euro; come verificare IVA e costi
+  di gestione; cosa controllare prima di consolidare un pacco.
+  -->
+  <style>
+    :root{color-scheme:light;--ink:#262436;--paper:#f8f4ee;--line:#ded5ce;--accent:#553f75;--wash:#ece4f1;--white:#fff}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.62 system-ui,sans-serif}
+    a{color:var(--accent);text-underline-offset:.2em}
+    a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    img{display:block;width:100%;height:auto;object-fit:contain;background:#f2edf1}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.13;overflow-wrap:anywhere}
+    h1{font-size:clamp(2.6rem,7vw,5.1rem);letter-spacing:-.055em}
+    h2{font-size:clamp(1.65rem,4vw,2.35rem);letter-spacing:-.035em}
+    h3{font-size:1.22rem}
+    p+p,h2+p,h3+p{margin-top:.65rem}
+    .wrap{width:min(69rem,calc(100% - 2rem));margin-inline:auto}
+    .top{padding:1rem 0;border-bottom:1px solid var(--line)}
+    .top a{font-weight:750}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(1.25rem,4vw,3rem);align-items:center;padding:clamp(1.5rem,5vw,4rem) 0 1.5rem}
+    .hero p{max-width:54ch;margin-top:.9rem}
+    .hero img{aspect-ratio:4/3;max-height:18rem}
+    .button{display:inline-flex;align-items:center;min-height:44px;margin-top:1rem;padding:.55rem 1rem;border-radius:.45rem;background:var(--accent);color:var(--white);font-weight:700}
+    .section{margin-block:clamp(1.7rem,4vw,3rem)}
+    .categories,.gallery,.articles{display:grid;gap:.7rem;margin-top:1rem}
+    .categories{grid-template-columns:repeat(5,minmax(0,1fr));padding:0;list-style:none}
+    .categories a{display:flex;align-items:center;min-height:48px;height:100%;padding:.55rem .7rem;border:1px solid var(--line);border-radius:.45rem;background:var(--white);font-weight:650}
+    .categories a:hover{background:var(--wash)}
+    .gallery{grid-template-columns:repeat(4,minmax(0,1fr))}
+    figure{min-width:0;border:1px solid var(--line);border-radius:.65rem;overflow:hidden;background:var(--white)}
+    .gallery img{aspect-ratio:4/3}
+    figcaption{padding:.5rem .75rem;font-size:.9rem}
+    .articles{grid-template-columns:repeat(3,minmax(0,1fr))}
+    article{padding:1rem;border:1px solid var(--line);border-radius:.65rem;background:var(--white)}
+    .check{padding:1rem 1.25rem;border-left:.3rem solid var(--accent);background:var(--wash)}
+    details{padding:.8rem .15rem;border-bottom:1px solid var(--line)}
+    details p{max-width:72ch;margin-top:.4rem}
+    summary{cursor:pointer;font-weight:700}
+    footer{padding:1.25rem 0 2rem;border-top:1px solid var(--line);font-size:.92rem}
+    @media(max-width:760px){.categories{grid-template-columns:repeat(3,minmax(0,1fr))}.articles{grid-template-columns:1fr}}
+    @media(max-width:520px){.hero{grid-template-columns:1fr}.hero img{max-height:9rem}.categories,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "name":"FSBuy spreadsheet | Guida italiana a categorie, taglie e QC",
+        "description":"Dieci categorie da esplorare e controlli pratici su misure, foto QC e spedizione in Italia.",
+        "inLanguage":"it",
+        "about":{"@type":"Thing","name":"FSBuy spreadsheet"}
+      },
+      {
+        "@type":"FAQPage",
+        "inLanguage":"it",
+        "mainEntity":[
+          {"@type":"Question","name":"Che cos’è un FSBuy spreadsheet?","acceptedAnswer":{"@type":"Answer","text":"È una raccolta di link a prodotti organizzati per categoria. Puoi usarla per confrontare modelli e varianti prima di aprire le singole schede."}},
+          {"@type":"Question","name":"Dove portano i link delle categorie?","acceptedAnswer":{"@type":"Answer","text":"Le dieci categorie aprono le rispettive sezioni del catalogo Hipobuyfind. La guida è indipendente da FSBuy."}},
+          {"@type":"Question","name":"Come scelgo la taglia delle sneakers?","acceptedAnswer":{"@type":"Answer","text":"Misura entrambi i piedi in centimetri e confronta il più lungo con la tabella del modello. Controlla se la tabella indica la lunghezza del piede o della soletta."}},
+          {"@type":"Question","name":"Le foto QC dimostrano l’autenticità?","acceptedAnswer":{"@type":"Answer","text":"Le foto QC mostrano lo stato visibile dell’articolo fotografato. Per verificare l’autenticità servono riscontri sulla provenienza e, quando opportuno, una verifica specializzata."}},
+          {"@type":"Question","name":"Come confronto due spedizioni verso l’Italia?","acceptedAnswer":{"@type":"Answer","text":"Usa la stessa destinazione e le stesse dimensioni del pacco per entrambi i preventivi. Confronta peso fatturabile, cambio, servizi inclusi ed eventuali imposte e costi di gestione."}}
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/qvtsx/">
+</head>
+<body>
+  <header class="top"><div class="wrap"><a href="https://www.hipobuyfind.com">Hipobuyfind</a></div></header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="titolo">
+      <div>
+        <h1 id="titolo">FSBuy spreadsheet</h1>
+        <p>Un FSBuy spreadsheet raccoglie link a prodotti per categoria. Questa guida in italiano ti aiuta a scegliere cosa cercare, leggere la scheda del venditore e confrontare misure, foto di controllo qualità (QC) e costi prima di ordinare.</p>
+        <a class="button" href="https://www.hipobuyfind.com">Apri il catalogo Hipobuyfind</a>
+      </div>
+      <figure>
+        <img src="https://kream-phinf.pstatic.net/MjAyNTA0MjFfMjE3/MDAxNzQ1MjEzNjMzMDk3.KaDNg-cqxxfmRzx68nY9AMeaeS-UWA9vgamdGOt1qQwg.M34ZLbEuKNowqGsQboMQoUkGPsoohtJ1zbUwnE2Ysfsg.PNG/a_8c2a720323004847a7b3a625e93e6a69.png?cors=w_production_214466" alt="Sneaker Nike Air Force 1 ’07 Low bianca" width="640" height="480" fetchpriority="high" loading="eager">
+        <figcaption>Nike Air Force 1 ’07 Low · riferimento visivo</figcaption>
+      </figure>
+    </section>
+
+    <nav aria-labelledby="categorie">
+      <h2 id="categorie">Sfoglia per categoria</h2>
+      <ul class="categories">
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Scarpe</a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Felpe e maglioni</a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirt</a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Giacche</a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Pantaloni e shorts</a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Cappelli</a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html">Completi</a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Intimo</a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Maglie sportive</a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Accessori</a></li>
+      </ul>
+    </nav>
+
+    <section class="section" aria-labelledby="dettagli">
+      <h2 id="dettagli">Dettagli da cercare nelle foto</h2>
+      <p>Le immagini sono riferimenti visivi. Per valutare l’articolo che stai considerando, usa le foto della variante selezionata e i dati della sua scheda.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://au.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-denim-jacket--FVJA29EFY610_PM2_Front%20view.png?hei=480&amp;wid=480" alt="Giacca Louis Vuitton in denim blu con motivo Monogram e tasche sul petto" width="480" height="360" loading="lazy" decoding="async">
+          <figcaption>Louis Vuitton · tasche e impunture</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/HEXFBFBFB_South_0_160_640x640/1751298339/838745_3HBC4_2600_001_100_0000_Light.jpg" alt="Cappellino da baseball Gucci in tela con motivo GG" width="480" height="360" loading="lazy" decoding="async">
+          <figcaption>Gucci · visiera e cuciture</figcaption>
+        </figure>
+        <figure>
+          <img src="https://item-shopping.c.yimg.jp/i/n/wine-king_2889900000073856_2_d_20230331163257" alt="Foulard Hermès Carré 90 con stampa Robe Légère" width="480" height="360" loading="lazy" decoding="async">
+          <figcaption>Hermès · stampa e bordi</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.christiandior.com/is/image/diorprod/N3523WOMZID301_SBG_E01-1?wid=480&amp;qlt=78" alt="Collana Dior Clair D Lune con catena dorata e ciondolo CD" width="480" height="360" loading="lazy" decoding="async">
+          <figcaption>Dior · catena e ciondolo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="guide">
+      <h2 id="guide">Tre guide prima dell’ordine</h2>
+      <div class="articles">
+        <article>
+          <h3>Catalogo e taglie FSBuy</h3>
+          <p>Quando cerchi su Weidian, Taobao o 1688, abbina il nome del modello alla variante che ti interessa. Apri la scheda e verifica che le foto e la tabella delle taglie si riferiscano alla stessa variante.</p>
+          <p>Per una felpa o una giacca, misura un capo che ti sta bene da steso, da ascella ad ascella, e confronta anche maniche e lunghezza. Per un cappellino regolabile, cerca l’intervallo della circonferenza in centimetri.</p>
+        </article>
+        <article>
+          <h3>Come leggere le foto QC</h3>
+          <p>Le immagini del venditore presentano il modello. Le foto QC servono a esaminare l’esemplare ricevuto. Per un paio di scarpe, cerca una vista di entrambe le suole e dei talloni. Per una giacca, controlla i punti vicini a tasche, cerniere e bottoni.</p>
+          <p>Se un dettaglio è fuori inquadratura, chiedi una foto ravvicinata, se disponibile. Per una collana, verifica la lunghezza utile della catena e controlla la chiusura.</p>
+        </article>
+        <article>
+          <h3>Spedizione FSBuy in Italia</h3>
+          <p>Per stimare il costo totale in euro, annota separatamente articolo, consegna al magazzino, conversione valutaria, trasporto internazionale ed eventuali imposte e costi di gestione.</p>
+          <p>Prima di unire più articoli in un pacco, confronta il peso reale con quello volumetrico riportato nel preventivo. Se togli la scatola delle scarpe per ridurre il volume, valuta la protezione disponibile per il trasporto.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section check" aria-labelledby="controllo">
+      <h2 id="controllo">Controllo rapido della scheda</h2>
+      <p>Salva il link originale e annota venditore, taglia, colore e data della verifica. Prima di ordinare, riapri il link e ricontrolla le opzioni selezionabili. Se confronti due schede, usa la stessa variante e lo stesso criterio di misurazione.</p>
+    </section>
+
+    <section class="section" aria-labelledby="faq">
+      <h2 id="faq">Domande frequenti</h2>
+      <details><summary>Che cos’è un FSBuy spreadsheet?</summary><p>È una raccolta di link a prodotti organizzati per categoria. Puoi usarla per confrontare modelli e varianti prima di aprire le singole schede.</p></details>
+      <details><summary>Dove portano i link delle categorie?</summary><p>Le dieci categorie aprono le rispettive sezioni del catalogo Hipobuyfind. La guida è indipendente da FSBuy.</p></details>
+      <details><summary>Come scelgo la taglia delle sneakers?</summary><p>Misura entrambi i piedi in centimetri e confronta il più lungo con la tabella del modello. Controlla se la tabella indica la lunghezza del piede o della soletta.</p></details>
+      <details><summary>Le foto QC dimostrano l’autenticità?</summary><p>Le foto QC mostrano lo stato visibile dell’articolo fotografato. Per verificare l’autenticità servono riscontri sulla provenienza e, quando opportuno, una verifica specializzata.</p></details>
+      <details><summary>Come confronto due spedizioni verso l’Italia?</summary><p>Usa la stessa destinazione e le stesse dimensioni del pacco per entrambi i preventivi. Confronta peso fatturabile, cambio, servizi inclusi ed eventuali imposte e costi di gestione.</p></details>
+    </section>
+  </main>
+  <footer><div class="wrap"><p>Guida indipendente. I marchi sono citati come riferimenti visivi. <a href="https://www.hipobuyfind.com">Vai a Hipobuyfind</a></p></div></footer>
+</body>
+</html>
